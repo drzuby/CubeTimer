@@ -1,0 +1,26 @@
+<configuration debug="true">
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>
+                %date [%thread] %level %logger{10} [%file:%line] - %msg%n
+            </pattern>
+        </encoder>
+    </appender>
+
+    <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+        <param name="Append" value="false" />
+        <file>
+            timer.log
+        </file>
+        <encoder>
+            <pattern>
+                %date [%thread] %level %logger{10} [%file:%line] - %msg%n
+            </pattern>
+        </encoder>
+    </appender>
+
+    <root level="debug">
+        <appender-ref ref="FILE" />
+        <appender-ref ref="STDOUT" />
+    </root>
+</configuration>
